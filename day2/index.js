@@ -29,7 +29,22 @@ const evalOpCode = (nums, index) => {
 	return resultArr;
 }
 
-ints[1] = 12;
-ints[2] = 2;
+const findNounAndVerb = nums => {
+	for (noun = 0; noun < 100; noun++) {
+		for (verb = 0; verb < 100; verb++) {
+			var numsReset = nums.slice();
 
-console.log(executeIntCode(ints, 0));
+			numsReset[1] = noun;
+			numsReset[2] = verb;
+
+			var result = executeIntCode(numsReset, 0);
+
+			if (result[0] === 19690720) {
+				console.log(100 * noun + verb);
+				break;
+			}
+		}
+	}
+}
+
+findNounAndVerb(ints);
