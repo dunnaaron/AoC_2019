@@ -19,8 +19,10 @@ var verifiedMatch = num => {
 
     num = num.toString()
 
-    for(let i = 1; i < num.length; i++) {
-        if(num[i] == num[i - 1]) {
+    for(let i = 0; i < num.length; i++) {
+        if(num[i] !== num[i - 1] &&
+            num[i] === num[i + 1] &&
+            num[i] !== num[i + 2]) {
             sameAdjacentNums = true;
         }
         if(num[i] < num[i - 1]) {
